@@ -8,31 +8,31 @@
 <h2>Painter entry Poojitha Mudupu</h2>
 
 <form>
-    <label for="Painter">The hidden painter name</label>
-    <input type ="password" id="Painter" name="Painter" value="Monet"> <br><br>
-    <label for="guessPainter">Guess the painter </label>
-    <input type ="text" id="guessPainter" name="guessPainter" autofocus> <br><br>
+    <label for="PainterName">The hidden painter name</label>
+    <input type ="password" id="PainterName" name="PainterName" value="Monet"> <br><br>
+    <label for="guessedPainterName">Guess the painter </label>
+    <input type ="text" id="guessedPainterName" name="guessedPainterName" autofocus> <br><br>
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
-<p id="result">Count of good and oops guesses </p>
+<p id="result">Count of correct and wrong guesses </p>
 <script> 
 var good=0;
 var oops=0;
 function checkPainter(){
     console.log("Getting form values")
-    PainterName = document.getElementById("Painter").value
-    guessPainterName = document.getElementById("guessPainter").value
+    PainterName = document.getElementById("PainterName").value
+    guessPainterName = document.getElementById("guessedPainterName").value
     confirmed = confirm("Are these the values? "+PainterName+" and "+guessPainterName)
     
     out = document.getElementById("result")
     if(PainterName==guessPainterName){
         alert("You got it right")
         good=good + 1
-        out.innerHTML = "Correct Answer : " + good + " " + "Wrong Answer: " + oops;
+        out.innerHTML = "Correct Guessed count : " + good + " " + "Wrong Guessed count: " + oops;
     } else {
         alert("Sorry")
         oops=oops+1
-        out.innerHTML = "Correct Answer : " + good + " " + "Wrong Answer: " + oops;
+        out.innerHTML = "Correct Guessed count : " + good + " " + "Wrong Guessed count: " + oops;
     }
 }
 </script>
