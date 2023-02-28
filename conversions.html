@@ -4,39 +4,29 @@
     <title>Currency Conversions</title>
  </head>
 <body>
-
 <h2>Poojitha Mudupu shows currency conversions </h2>
-
 <form>
     <label for="base_Element">Enter base amount </label>
-    <input type ="number" id="base_Element" name="base_Element" min=50 max=500 step=2 value=30> <br>
-
+    <input type ="number" id="base_Element" name="base_Element" value=50 > <br>
     <label for="conversion_Element">Enter the conversion rate </label>
-    <input type ="number" id="conversion_Element" name="conversion_Element" min=35 autofocus> <br>
+    <input type ="number" id="conversion_Element" name="conversion_Element" value=35 autofocus> <br>
 
-    <input type="button" onclick="convert()" value="Show conversions">
+    <input type="button" onclick=convert() value="Show conversions">
 </form>
-
-
 <p id="result">This text will be replaced </p>
-
 <script> 
-
 function convert(){
     console.log("Getting form values")
     inputElement = document.getElementById("base_Element").value
     inputConversion = document.getElementById("conversion_Element").value
-    var toShow ="";
-   // confirmed = confirm("Are these the values? "+age+" and "+nick)
-    for()
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
+    var toShow ='';
+    for(let i=inputElement;i<=inputElement+5;i=i*2){
+        let b= i*inputConversion;
+        let x=b.toString();
+        toShow += i+" is "+b+";";
+    }  
+document.getElementById("result").innerHTML="Conversion are "+toShow
+    } 
 </script>
-
 </body>
 </html> 
