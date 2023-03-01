@@ -33,24 +33,22 @@ function checkPainter(){
         out.innerHTML = "Correct Guessed count : " + good + " " + "Wrong Guessed count: " + oops;
     } 
     else if (oops >= 10) {
-                document.getElementById("btn").onclick = buttonAlert();             
-                out.innerHTML = "Correct guess: " + good + " Wrong guess: " + oops;
-            }
+    document.getElementById("btn").onclick = buttonAlert();             
+    out.innerHTML = "Correct guess: " + good + " Wrong guess: " + oops;
+}
             else{
                 alert("Sorry");
                 oops = oops + 1
                 out.innerHTML = "Correct guess: " + good+ " Wrong guess: " + oops;
 }
 }
-              function buttonAlert() {
-                       alert("Sorry, ran out of guesses.");
-                       }
-            
-
+function buttonAlert() {
+    alert("Sorry, ran out of guesses.");
+    }
+             
        var useImage=1;
   function selectImage(){
       switch (useImage){
- 
          case 1:
            document.getElementById("Image").src="PANICUM.jpg";
            useImage++;
@@ -63,7 +61,6 @@ function checkPainter(){
             document.getElementById("Image").src="Mint.jpg"; 
             useImage=1
             break;
-
     }
 }
 </script>
@@ -74,3 +71,20 @@ function checkPainter(){
 </div>
 </body>
 </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
