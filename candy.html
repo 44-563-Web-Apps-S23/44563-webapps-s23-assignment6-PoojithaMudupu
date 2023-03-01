@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <title>Checkboxes topic</title>
+<body>
+
+<h2> Poojitha Mudupu chooses candy</h2>
+
+    <form>
+        <input type="checkbox" id="ChocolateP" name="Chocolate" value="True"   
+          checked >
+        <label for="dark">Dark Chocolate</label></br>
+      
+        <input type="checkbox" id="NutsP" name="Nuts" 
+           value="True">
+        <label for="nuts">Nuts</label></br>
+      
+        <input type="checkbox" id="ChewyP" name="Chewy"   
+           value="False">
+        <label for="chewy">Chewy</label></br>
+
+        <input type="button" onclick="selectBox()" value="Select a box">
+      </form>
+              <p id="check">This text will be replaced </p>
+
+
+              
+
+<script> 
+function selectBox() {
+   var my_candy_box={};
+    console.log("Getting input")
+    my_candy_box.dark = document.getElementById("ChocolateP").checked
+    my_candy_box.nuts = document.getElementById("NutsP").checked
+    my_candy_box.chewy = document.getElementById("ChewyP").checked
+    //confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
+    
+     document.getElementById("check").innerHTML=JSON.stringify(my_candy_box)
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html> 
