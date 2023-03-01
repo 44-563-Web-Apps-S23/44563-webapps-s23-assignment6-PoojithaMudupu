@@ -6,8 +6,7 @@
 <h2> Poojitha Mudupu chooses candy</h2>
 
     <form>
-        <input type="checkbox" id="ChocolateP" name="Chocolate" value="True"   
-          checked >
+        <input type="checkbox" id="ChocolateP" name="Chocolate" value="True">
         <label for="dark">Dark Chocolate</label></br>
       
         <input type="checkbox" id="NutsP" name="Nuts" 
@@ -22,12 +21,20 @@
       </form>
               <p id="check">This text will be replaced </p>
 
+<form>
+    <label for="name">Enter the size</label>
+    <input type="text" id="sizeofname" name="sizeofname" value="size"><br><br>
+    <label for="price">Enter Price</label>
+    <input type="text" id="prices" name="price"><br><br>
+    <input type="button" onclick="updateBox()" value="Update the box">
 
-              
+</form>
+   <p id="checkbox" >This text will be displayed</p>          
 
 <script> 
+ var my_candy_box={};
 function selectBox() {
-   var my_candy_box={};
+  
     console.log("Getting input")
     my_candy_box.dark = document.getElementById("ChocolateP").checked
     my_candy_box.nuts = document.getElementById("NutsP").checked
@@ -35,6 +42,14 @@ function selectBox() {
     //confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
     
      document.getElementById("check").innerHTML=JSON.stringify(my_candy_box)
+
+}
+
+function updateBox(){
+    my_candy_box.size=document.getElementById("sizeofname").value
+    my_candy_box.price=document.getElementById("prices").value
+    document.getElementById("checkbox").innerHTML=JSON.stringify(my_candy_box)
+
 
 }
 
