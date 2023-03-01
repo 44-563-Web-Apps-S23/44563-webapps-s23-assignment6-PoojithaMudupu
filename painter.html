@@ -6,18 +6,20 @@
 <body>
 
 <h2>Painter entry Poojitha Mudupu</h2>
-
+<div class="container">
 <form>
     <label for="PainterName">The hidden painter name</label>
     <input type ="password" id="PainterName" name="PainterName" value="Monet"> <br><br>
     <label for="guessedPainterName">Guess the painter </label>
     <input type ="text" id="guessedPainterName" name="guessedPainterName" autofocus> <br><br>
-    <input type="button" onclick="checkPainter()" value="Check the guess">
+    <input type="button" onclick="checkPainter()" id="btn" value="Check the guess">
 </form>
+</div>
 <p id="result">Count of correct and wrong guesses </p>
 <script> 
 var good=0;
 var oops=0;
+var counter=0;
 function checkPainter(){
     console.log("Getting form values")
     PainterName = document.getElementById("PainterName").value
@@ -29,28 +31,37 @@ function checkPainter(){
         alert("You got it right")
         good=good + 1
         out.innerHTML = "Correct Guessed count : " + good + " " + "Wrong Guessed count: " + oops;
-    } else {
-        alert("Sorry")
-        oops=oops+1
-        out.innerHTML = "Correct Guessed count : " + good + " " + "Wrong Guessed count: " + oops;
-    }
+    } 
+    else if (oops >= 10) {
+                document.getElementById("btn").onclick = buttonAlert();             
+                out.innerHTML = "Correct guess: " + good + " Wrong guess: " + oops;
+            }
+            else{
+                alert("Sorry");
+                oops = oops + 1
+                out.innerHTML = "Correct guess: " + good+ " Wrong guess: " + oops;
 }
+}
+              function buttonAlert() {
+                       alert("Sorry, ran out of guesses.");
+                       }
+            
 
-var useImage=1;
-function selectImage(){
-    switch (useImage){
+       var useImage=1;
+  function selectImage(){
+      switch (useImage){
  
-        case 1:
+         case 1:
            document.getElementById("Image").src="PANICUM.jpg";
            useImage++;
             break;
         case 2:
-        document.getElementById("Image").src="Uvularia.jpg";
-        useImage++;
-            break;
+           document.getElementById("Image").src="Uvularia.jpg";
+           useImage++;
+           break;
         case 3:
-        document.getElementById("Image").src="Mint.jpg"; 
-        useImage=1
+            document.getElementById("Image").src="Mint.jpg"; 
+            useImage=1
             break;
 
     }
@@ -62,8 +73,4 @@ function selectImage(){
    
 </div>
 </body>
-
-
-
-
 </html> 
